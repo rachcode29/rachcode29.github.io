@@ -1,19 +1,80 @@
-/* Estilo general */
-body {
-  font-family: "Georgia", "Times New Roman", serif;
-  line-height: 1.6;
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+/* Fondo de la página */
+body, html {
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
-  color: #222;
+  height: 100%;
+  font-family: 'Courier Prime', monospace;
+  scroll-behavior: smooth;
+}
+/* ______________________________modif__________________________________*/
+/* Menú superior */
+.top-nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(170, 129, 150, 0.80);
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+  padding: 0.6rem 0;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 0 1.2rem;
+}
+
+.menu a {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/*____________________________________________________________*/
+/* Imagen de fondo */
+.background {
+  min-height: 100vh;
+  background-image: url("img/fondo.jpg"); /* ← cambia esto */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+}
+
+/* Cuadro del contenido */
+.content-box {
+  max-width: 1500px;
+  width: 100%;
+  background-color: rgba(210, 190, 170, 0.85);
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
 }
 
 /* Cabecera */
 header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 2rem 1rem;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 header h1 {
@@ -24,24 +85,24 @@ header h1 {
 .subtitle {
   margin-top: 0.5rem;
   font-size: 1.1rem;
-  color: #555;
 }
 
-/* Contenido principal */
-main {
-  max-width: 800px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
-}
-
+/* Secciones */
 section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  scroll-margin-top: 100px;
 }
 
 h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
+}
+
+/* Texto */
+p, li {
   font-size: 1.4rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.3rem;
+  line-height: 1.6;
 }
 
 /* Listas */
@@ -49,26 +110,38 @@ ul {
   padding-left: 1.2rem;
 }
 
-li {
-  margin-bottom: 0.6rem;
-}
-
 /* Enlaces */
 a {
-  color: #003366;
-  text-decoration: none;
-}
-
-a:hover {
+  color: #000;
   text-decoration: underline;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
+/* Responsive */
+@media (max-width: 600px) {
+  .content-box {
+    padding: 1.5rem;
+  }
 }
+
+/* Sobre mí en dos columnas */
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Foto */
+.profile-photo {
+  width: 250px;
+  height: auto;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+
+/* Texto */
+.about-text {
+  flex: 1;
+}
+
+
 
